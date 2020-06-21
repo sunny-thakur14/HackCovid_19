@@ -63,7 +63,7 @@ def wishMe():
     else:
         speak("good evening")
 
-    speak("im lara , a python based , machine learnig program made by future vision team . Say coronavirus to see , coronavirus statewise cases in india.  say symptoms to listen symptoms . say precautions to know them .")
+    speak("im lara , a python based , machine learning program made by future vision team . Say coronavirus to see , coronavirus statewise cases in india.  say symptoms to listen symptoms . say precautions to know them .")
     speak('say stop , to close this program')
     speak('now speak , i am listening')
 
@@ -94,27 +94,34 @@ if __name__=="__main__":
                 dataList = item.split('\n')
                 if dataList[1] in states:
                     print(dataList)
+                    # speak(dataList)
                     nTitle = "Cases of covid-19"
-                    nText = f"State : {dataList[1]}\n Total confirm cases : {dataList[5]}\n Active cases : {dataList[2]}\n Cured : {dataList[3]} & Deaths : {dataList[4]}"
+                    nText = f"State : {dataList[1]}\n  Active cases : {dataList[2]}\n Cured : {dataList[3]} & Deaths : {dataList[4]}\n Total confirm cases : {dataList[5]}"
+                    speak(nText)
                     notifyMe(nTitle, nText)
                     time.sleep(6)
-            speak('You can see as much states as you want . i can show cases of all states . just put name of you want to see in code   . now speak')
+            speak('This data is taken from ministery of health  and family wefare. You can see as much states as you want . i can show cases of all states . just put name of you want to see in code   . now speak')
 
 
         elif 'symptoms' in query:
             speak('the symptoms of coronavirus are ')
-            speak('fever \n dry cough \n tiredness \n difficulty in breathing \n chest pain \n loss of speech')
+            speak('1 fever \n 2 dry cough \n 3 tiredness \n 4 difficulty in breathing \n 5 chest pain \n6 loss of speech')
+            print(' 1 fever \n 2 dry cough \n 3 tiredness \n 4 difficulty in breathing \n 5 chest pain \n 6 loss of speech')
             speak('except symptoms , anything you want to know , speak now')
 
         elif 'precaution' in query:
             speak('one should take following precautions to avoid coronavirus')
-            speak('clean your hands with a alcohol based handwash \n follow social distancing especially from one who has cough or cold \n '
-                  'cover your mouth and nose with mask and avoid touching the mask often \n if you have difficulty in breathing take medical assistance \n avoid travelling in these days if possible'
+            speak(' 1 clean your hands with a alcohol based handwash \n 2 follow social distancing especially from one who has cough or cold \n '
+                  ' 3 cover your mouth and nose with mask and avoid touching the mask often \n 4 if you have difficulty in breathing take medical assistance \n 5 avoid travelling in these days if possible'
+                  )
+            print(' 1 clean your hands with a alcohol based handwash \n 2 follow social distancing especially from one who has cough or cold \n '
+                  '3 cover your mouth and nose with mask and avoid touching the mask often \n 4 if you have difficulty in breathing take medical assistance \n 5 avoid travelling in these days if possible'
                   )
             speak('we can beat corona by following the lockdown and guidelines issued by our indian government . So please do not go out ')
-            speak('except precuations , anything you want to know , speak now')
+            speak('except precautions , anything you want to know , speak now')
 
 
         elif 'stop' in query:
             speak('i am turning off')
             break
+
